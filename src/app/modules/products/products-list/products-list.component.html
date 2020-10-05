@@ -1,0 +1,35 @@
+<div id="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <h4> Products List</h4>
+                    <button class="float-right btn btn-primary" (click)="addProduct([], 'add')">Add New Product</button>
+                    <br>
+                </div>
+                <br>
+<div class="table-responsive">
+    <table class="table  table-striped m-t-10" aria-describedby="vendor-list">
+        <thead>
+            <tr>
+                <th scope="col"> Name</th>
+                <th scope="col"> Available Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let productSetup of products">
+                <td>{{productSetup.productName}}</td>
+                <td>{{productSetup.availableQuantity}}</td>
+                <td>
+                    <button class="btn btn-primary"[disabled] ='productSetup.availableQuantity === 0'value="Order" (click)="addProduct(productSetup, 'order')"> Order</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+</div>
